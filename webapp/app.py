@@ -2,7 +2,6 @@
 # _*_ coding:utf-8 _*_
 
 import logging; logging.basicConfig(level=logging.INFO)
-
 import asyncio
 from aiohttp import web
 
