@@ -222,7 +222,7 @@ class Model(dict, metaclass=ModelMetaClass):
         return cls(**rs[0])
 
     async def save(self):
-        args = list(map(self.get_value_or_default(), self.__fields__))
+        args = list(map(self.get_value_or_default, self.__fields__))
         args.append(self.get_value_or_default(self.__primary_key__))
         rows = await execute(self.__insert__, args)
         if rows != 1:
